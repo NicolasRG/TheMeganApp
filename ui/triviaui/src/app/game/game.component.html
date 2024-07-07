@@ -1,0 +1,54 @@
+<div *ngIf ="state == gameState.OPEN">
+    <div>
+        Join with code : {{roomCode}}
+    </div>
+
+    <header>Players</header>
+
+    <mat-list *ngFor="let player of players">
+        <mat-list-item>
+            <span matListItemAvatar><img class="avatar" src="{{avatars[player.avatar]}}"></span>
+            <span matListItemTitle>{{player.userName}}</span>
+        </mat-list-item>
+    </mat-list>
+</div>
+
+<div *ngIf ="state == gameState.INSONG">
+    <div *ngIf ="!hasCorrectAnswer">
+        <br>
+        <!-- <img class="avatar" src="{{avatars[userToken.avatar]}}"> -->
+        <br>
+        <mat-form-field>
+            <mat-label>Answer</mat-label>
+            <input matInput [formControl]="useranswer">
+        </mat-form-field>
+
+        <button style="margin-left: 10px;" color="primary" (click)="submitAnswer()">    
+            submit
+        </button>
+    </div>
+    <div *ngIf ="hasCorrectAnswer">
+        <!-- <img class="avatar" src="{{avatars[userToken.avatar]}}"> -->
+        <br>
+        <div> CORRECT </div>
+        <div> {{userToken.score}}</div>
+    </div>
+</div>
+
+<div *ngIf ="state == gameState.AFTERSONG">
+    <div class="songcontainer">
+        <img class= "albumartsong" src="{{songInfo.correctAnswer.coverArt}}">
+        <div class="songinfo">
+            <span>{{songInfo.correctAnswer.songName}}</span>
+            <span>{{songInfo.correctAnswer.artist}}</span>
+            <span>{{songInfo.correctAnswer.album}}</span>
+        </div>
+    </div>
+    <mat-list *ngFor="let player of players">
+        <mat-list-item>
+            <span matListItemAvatar><img class="avatar" src="{{avatars[player.avatar]}}"></span>
+            <span matListItemTitle>{{player.userName}}</span>
+            <span matListItemLine>{{player.score}}</span>
+        </mat-list-item>
+    </mat-list>
+</div>

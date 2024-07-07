@@ -89,7 +89,8 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist
+
+certs
 
 # Gatsby files
 .cache/
@@ -128,3 +129,10 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+.vscode
+
+
+middleware/certs
+dist
+*/meganappbackend

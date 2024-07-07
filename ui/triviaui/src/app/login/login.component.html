@@ -1,0 +1,33 @@
+<div class="login-container">
+
+
+    <div class = "loginbutons" *ngIf="!showRoomForm">
+      
+        <button mat-raised-button color="secondary" (click)="onCreateRoom()" > Create Room </button>
+      
+        <button mat-raised-button color="primary" (click)="onJoinRoom()" > Join Room </button>
+    </div>
+
+    <div class = "form" *ngIf="showRoomForm">
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput [formControl]="name">
+        </mat-form-field>
+
+        <!-- comment this back in you have time to implement an avatar
+        <mat-form-field>
+            <mat-label>Avatar</mat-label>
+            <input matInput>
+        </mat-form-field> -->
+
+        <mat-form-field>
+            <mat-label>Room Code</mat-label>
+            <input matInput [formControl]="roomCode">
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" (click)="submitJoinRoom()" > Join Room </button>
+
+    </div>
+      
+    
+</div>

@@ -1,0 +1,16 @@
+
+<div class="header">
+    The Megan Burf Day
+</div>
+
+<router-outlet></router-outlet>
+
+<ngx-loading
+    [show]="loading"
+    [config]="{
+    animationType: ngxLoadingAnimationTypes.circleSwish,
+    primaryColour: primaryColour,
+    backdropBorderRadius: '3px'
+    }"
+    [template]="loadingTemplate"
+  ></ngx-loading>

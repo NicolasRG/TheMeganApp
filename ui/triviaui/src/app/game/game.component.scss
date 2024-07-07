@@ -1,0 +1,24 @@
+.avatar{
+    width: 48px;
+    height: 48px;
+}
+
+.songcontainer{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 25vw;
+    width: 25vw;
+}
+
+.albumartsong{
+    width: 75px;
+    height: 75px;
+}
+
+.songinfo{
+    display: flex;
+    width: 100%;
+    max-width: 25vw;
+    justify-content: space-around;
+}

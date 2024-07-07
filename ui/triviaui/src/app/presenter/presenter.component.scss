@@ -1,0 +1,53 @@
+.avatar{
+    width: 48px;
+    height: 48px;
+}
+
+.insongavatar{
+    width: 128px;
+    height: 128px;
+}
+
+.insongcontainer{
+    padding-left: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 90vw;
+}
+
+.insongcorrectplayer{
+    border: thick double greenyellow;
+}
+
+.playercontainer{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.songcontainer{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 25vw;
+    width: 25vw;
+}
+
+.albumartsong{
+    width: 25vw;
+    height: 25vh;
+}
+
+.songinfo{
+    display: flex;
+    width: 100%;
+    max-width: 25vw;
+    justify-content: space-around;
+}
+
+.playercontaineraftersong{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    max-width: 75vw;
+}

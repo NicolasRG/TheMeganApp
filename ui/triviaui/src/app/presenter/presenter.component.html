@@ -1,0 +1,51 @@
+<h4>
+    Game Room
+</h4>
+
+<div *ngIf ="state == gameState.OPEN">
+    <div>
+        Join with code : {{roomCode}}
+    </div>
+
+    <header>Players</header>
+
+     <div class="playercontainer" *ngFor="let player of players">
+            <span>
+                <img class="insongavatar" src="{{avatars[player.avatar]}}">
+            </span>
+            <span> {{player.userName}}</span>
+    </div>
+
+    <button mat-raised-button color="primary" raised (click)="startGame()">
+        Start Game
+    </button>
+</div>
+
+<div class="insongcontainer" *ngIf ="state == gameState.INSONG">
+    <div class="playercontainer" *ngFor="let player of players">
+            <span [ngStyle]= "{'border':  isPlayerCorrect(player.userName)  ?  'thick double greenyellow' : 'none'}">
+                <img class="insongavatar" src="{{avatars[player.avatar]}}">
+            </span>
+            <span> {{player.userName}}</span>
+    </div>
+</div>
+
+<div *ngIf ="state == gameState.AFTERSONG">
+    <div class="songcontainer">
+        <img class= "albumartsong" src="{{songInfo.correctAnswer.coverArt}}">
+        <div class="songinfo">
+            <span>{{songInfo.correctAnswer.songName}}</span>
+            <span>{{songInfo.correctAnswer.artist}}</span>
+            <span>{{songInfo.correctAnswer.album}}</span>
+        </div>
+    </div>
+    
+    <div>Scores</div>
+    <div class="playercontaineraftersong" *ngFor="let player of players">
+        <span>
+            <img class="insongavatar" src="{{avatars[player.avatar]}}">
+        </span>
+        <span> {{player.userName}} : </span>
+        <span> {{player.score}}</span>
+    </div>
+</div>
